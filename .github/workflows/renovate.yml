@@ -17,4 +17,4 @@ jobs:
           configurationFile: .github/renovate.json5
           token: '${{ secrets.RENOVATE_TOKEN }}'
         env:
-          RENOVATE_REPOSITORIES: '["cibseven/cibseven"]'
+          RENOVATE_REPOSITORIES: '["vladgrind/cibseven"]'

@@ -32,39 +32,27 @@
     ],
   },
   "packageRules": [
-    // TEMPORARY (commented out): Camunda's original allowlist of 19 trusted library families.
-    // Restore this block - and remove/narrow the blanket-disable-all rule right below - once the
-    // release-parent-only rollout has proven stable and you're ready to widen scope again.
-    // {
-    //   "matchPackageNames": [
-    //     "!/^org.springframework/",
-    //     "!/^org.apache.tomcat/",
-    //     "!/^commons-fileupload/",
-    //     "!/^org.apache.commons:commons-lang3/",
-    //     "!/^net.minidev:json-smart/",
-    //     "!/^com.jayway.jsonpath:json-path/",
-    //     "!/^org.apache.httpcomponents.client5/",
-    //     "!/^com.fasterxml.uuid/",
-    //     "!/^com.fasterxml.jackson/",
-    //     "!/^org.camunda.feel/",
-    //     "!/^io.quarkus/",
-    //     "!/^ch.qos.logback/",
-    //     "!/^org.graalvm/",
-    //     "!/^com.google.code.gson/",
-    //     "!/^org.postgresql/",
-    //     "!/^com.h2database/",
-    //     "!/^com.mysql/",
-    //     "!/^org.jboss.resteasy/",
-    //     "!/^org.apache.groovy/"
-    //   ],
-    //   "enabled": false
-    // },
     {
-      // TEMPORARY: disables every dependency except release-parent (see the override rule below),
-      // for a minimal-effect first rollout. Remove this rule (and uncomment the block above) to
-      // restore the original 19-library allowlist.
       "matchPackageNames": [
-        "*"
+        "!/^org.springframework/",
+        "!/^org.apache.tomcat/",
+        "!/^commons-fileupload/",
+        "!/^org.apache.commons:commons-lang3/",
+        "!/^net.minidev:json-smart/",
+        "!/^com.jayway.jsonpath:json-path/",
+        "!/^org.apache.httpcomponents.client5/",
+        "!/^com.fasterxml.uuid/",
+        "!/^com.fasterxml.jackson/",
+        "!/^org.camunda.feel/",
+        "!/^io.quarkus/",
+        "!/^ch.qos.logback/",
+        "!/^org.graalvm/",
+        "!/^com.google.code.gson/",
+        "!/^org.postgresql/",
+        "!/^com.h2database/",
+        "!/^com.mysql/",
+        "!/^org.jboss.resteasy/",
+        "!/^org.apache.groovy/"
       ],
       "enabled": false
     },
@@ -72,10 +60,9 @@
       "matchUpdateTypes": [
         "patch"
       ],
-      // TEMPORARY: "automerge" label removed while auto-merge is disabled repo-wide (see
-      // renovate-auto-merge.yml). Add "automerge" back to this list once you re-enable it there.
       "addLabels": [
-        "ci:all"
+        "ci:all",
+        "automerge"
       ]
     },
     {
