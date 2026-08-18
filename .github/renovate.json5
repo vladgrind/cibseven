@@ -12,8 +12,6 @@
     "dependencies"
   ],
   "prConcurrentLimit": 10,
-  // Recreate closed update PRs so a manually closed test PR can be proposed again.
-  "recreateWhen": "always",
   "baseBranchPatterns": [
     "main"
   ],
