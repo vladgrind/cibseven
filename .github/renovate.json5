@@ -7,8 +7,7 @@
     // robust way to fully disable it. Remove this entry to re-enable the dashboard.
     ":disableDependencyDashboard"
   ],
-  "branchPrefix": "",
-  "additionalBranchPrefix": "{{{baseBranch}}}-",
+  "branchPrefix": "renovate/",
   "addLabels": [
     "dependencies"
   ],
