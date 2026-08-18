@@ -12,4 +12,9 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: wechuli/allcheckspassed@v1.2.0
+      - uses: wechuli/allcheckspassed@v2.4.0
+      - name: Enable pull request auto-merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --auto --squash --delete-branch
