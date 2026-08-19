@@ -5,7 +5,7 @@
     // TEMPORARY: the raw "dependencyDashboard": false option turned out to be unreliable (a
     // Dependency Dashboard issue still got created once). This preset is the documented, more
     // robust way to fully disable it. Remove this entry to re-enable the dashboard.
-    ":disableDependencyDashboard"
+    // ":disableDependencyDashboard"
   ],
   "branchPrefix": "renovate/",
   "addLabels": [
@@ -32,31 +32,37 @@
     ],
   },
   "packageRules": [
-    // Disable any other packages outside the trusted families below. Later rules can explicitly re-enable
-    // an exception, such as release-parent.
+    // Disable all packages by default; later rules explicitly re-enable trusted packages.
     {
       "matchPackageNames": [
-        "!/^org.springframework/",
-        "!/^org.apache.tomcat/",
-        "!/^commons-fileupload/",
-        "!/^org.apache.commons:commons-lang3/",
-        "!/^net.minidev:json-smart/",
-        "!/^com.jayway.jsonpath:json-path/",
-        "!/^org.apache.httpcomponents.client5/",
-        "!/^com.fasterxml.uuid/",
-        "!/^com.fasterxml.jackson/",
-        "!/^org.camunda.feel/",
-        "!/^io.quarkus/",
-        "!/^ch.qos.logback/",
-        "!/^org.graalvm/",
-        "!/^com.google.code.gson/",
-        "!/^org.postgresql/",
-        "!/^com.h2database/",
-        "!/^com.mysql/",
-        "!/^org.jboss.resteasy/",
-        "!/^org.apache.groovy/"
+        "*"
       ],
       "enabled": false
+    },
+    // Re-enable only the trusted dependency families.
+    {
+      "matchPackageNames": [
+        "/^org.springframework/",
+        "/^org.apache.tomcat/",
+        "/^commons-fileupload/",
+        "/^org.apache.commons:commons-lang3/",
+        "/^net.minidev:json-smart/",
+        "/^com.jayway.jsonpath:json-path/",
+        "/^org.apache.httpcomponents.client5/",
+        "/^com.fasterxml.uuid/",
+        "/^com.fasterxml.jackson/",
+        "/^org.camunda.feel/",
+        "/^io.quarkus/",
+        "/^ch.qos.logback/",
+        "/^org.graalvm/",
+        "/^com.google.code.gson/",
+        "/^org.postgresql/",
+        "/^com.h2database/",
+        "/^com.mysql/",
+        "/^org.jboss.resteasy/",
+        "/^org.apache.groovy/"
+      ],
+      "enabled": true
     },
     // Add labels to eligible patch PRs; the automerge label is consumed by the auto-merge workflow.
     {
@@ -74,6 +80,7 @@
         "major",
         "minor"
       ],
+      "dependencyDashboardApproval": true,
       "addLabels": [
         "ci:all"
       ]
