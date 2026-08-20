@@ -5,7 +5,7 @@
     // TEMPORARY: the raw "dependencyDashboard": false option turned out to be unreliable (a
     // Dependency Dashboard issue still got created once). This preset is the documented, more
     // robust way to fully disable it. Remove this entry to re-enable the dashboard.
-    ":disableDependencyDashboard"
+    // ":disableDependencyDashboard"
   ],
   "branchPrefix": "renovate/",
   "addLabels": [
@@ -80,7 +80,7 @@
         "major",
         "minor"
       ],
-      "dependencyDashboardApproval": false,
+      "dependencyDashboardApproval": true,
       "addLabels": [
         "ci:all"
       ]
