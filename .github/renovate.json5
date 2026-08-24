@@ -12,6 +12,11 @@
     "dependencies"
   ],
   "prConcurrentLimit": 10,
+  "prHourlyLimit": 5,
+  "reviewers": [
+    "fernando-m-g",
+    "vladgrind"
+  ],
   "baseBranchPatterns": [
     "main"
   ],
